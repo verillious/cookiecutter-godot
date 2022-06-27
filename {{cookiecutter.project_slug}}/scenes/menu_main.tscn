@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/ui_quit_button.gd" type="Script" id=1]
+[ext_resource path="res://scenes/ui_version_label.gd" type="Script" id=2]
+[ext_resource path="res://resources/theme_main.tres" type="Theme" id=3]
+[ext_resource path="res://scenes/ui_transition_button.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = -100.0
+margin_bottom = -100.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 824.0
+margin_bottom = 400.0
+
+[node name="LabelTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 824.0
+margin_bottom = 14.0
+text = "{{ cookiecutter.project_name }}"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 824.0
+margin_bottom = 207.0
+rect_min_size = Vector2( 0, 24 )
+size_flags_vertical = 3
+custom_styles/separator = SubResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 211.0
+margin_right = 824.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 273.0
+margin_bottom = 189.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="ButtonContinue" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 273.0
+margin_bottom = 20.0
+disabled = true
+text = "continue"
+align = 0
+script = ExtResource( 4 )
+
+[node name="ButtonNewGame" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 273.0
+margin_bottom = 44.0
+text = "new"
+align = 0
+script = ExtResource( 4 )
+scene = "res://scenes/level_main.tscn"
+
+[node name="ButtonSettings" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 273.0
+margin_bottom = 68.0
+text = "settings"
+align = 0
+script = ExtResource( 4 )
+scene = "res://scenes/menu_settings.tscn"
+
+[node name="ButtonQuit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 273.0
+margin_bottom = 92.0
+text = "quit"
+align = 0
+script = ExtResource( 1 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 277.0
+margin_right = 824.0
+margin_bottom = 189.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="VersionLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 157.0
+margin_right = 547.0
+margin_bottom = 171.0
+align = 2
+script = ExtResource( 2 )
+
+[node name="LabelAuthor" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 175.0
+margin_right = 547.0
+margin_bottom = 189.0
+text = "by {{ cookiecutter.full_name }}"
+align = 2

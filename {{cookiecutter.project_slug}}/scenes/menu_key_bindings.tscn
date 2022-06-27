@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "class_name KeyBindingMenu
+extends GridContainer
+
+const UI_ACTIONS_ORDER := [
+	\"ui_accept\",
+	\"ui_select\",
+	\"ui_cancel\",
+	\"ui_focus_next\",
+	\"ui_focus_prev\",
+	\"ui_left\",
+	\"ui_right\",
+	\"ui_up\",
+	\"ui_down\",
+	\"ui_page_up\",
+	\"ui_page_down\",
+	\"ui_home\",
+	\"ui_end\"
+]
+
+
+func _init() -> void:
+	set_process_unhandled_input(false)
+	self.columns = 2
+
+
+func _ready() -> void:
+	for action in UI_ACTIONS_ORDER:
+		if InputMap.has_action(action):
+			add_action_ready(action)
+	for action in InputMap.get_actions():
+		if not action in UI_ACTIONS_ORDER:
+			add_action_ready(action)
+
+
+func add_action_ready(action: String) -> void:
+	var label := Label.new()
+	label.text = action
+	label.size_flags_horizontal = SIZE_EXPAND_FILL
+	add_child(label)
+	var action_list = InputMap.get_action_list(action)
+
+	var input = null
+	while action_list:
+		input = action_list.pop_back()
+		if input is InputEventKey or input is InputEventMouseButton:
+			break
+		else:
+			input = null
+	var input_edit = InputEdit.new(action, input)
+	add_child(input_edit)
+"
+
+[node name="GridContainer" type="GridContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+mouse_filter = 2
+columns = 2
+script = SubResource( 1 )

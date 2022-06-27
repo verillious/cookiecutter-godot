@@ -1,0 +1,264 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/ui_slider_label.gd" type="Script" id=1]
+[ext_resource path="res://scenes/ui_key_bindings_edit.gd" type="Script" id=2]
+[ext_resource path="res://scenes/ui_settings_edit.gd" type="Script" id=3]
+
+[node name="SettingsEdit" type="TabContainer"]
+margin_right = 824.0
+margin_bottom = 448.0
+size_flags_vertical = 3
+tab_align = 0
+script = ExtResource( 3 )
+
+[node name="Video" type="Tabs" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+tab_close_display_policy = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Video"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Video/MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 791.0
+margin_bottom = 387.0
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Video/MarginContainer/VBoxContainer"]
+margin_right = 766.0
+margin_bottom = 362.0
+size_flags_vertical = 3
+custom_constants/vseparation = 20
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelDisplayMode" type="Label" parent="Video/MarginContainer/VBoxContainer/GridContainer"]
+margin_right = 87.0
+margin_bottom = 20.0
+size_flags_vertical = 1
+text = "Display Mode"
+
+[node name="OptionButtonDisplayMode" type="OptionButton" parent="Video/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 670.0
+margin_right = 766.0
+margin_bottom = 20.0
+size_flags_horizontal = 10
+text = "Windowed"
+items = [ "Windowed", null, false, 0, null, "Fullscreen", null, false, 1, null ]
+selected = 0
+
+[node name="LabelVsync" type="Label" parent="Video/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 53.0
+margin_right = 87.0
+margin_bottom = 67.0
+text = "Vsync"
+
+[node name="CheckButtonVsync" type="CheckButton" parent="Video/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 690.0
+margin_top = 40.0
+margin_right = 766.0
+margin_bottom = 80.0
+size_flags_horizontal = 8
+
+[node name="LabelVsync2" type="Label" parent="Video/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 113.0
+margin_right = 87.0
+margin_bottom = 127.0
+text = "Cap FPS"
+
+[node name="CheckButtonCapFPS" type="CheckButton" parent="Video/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 690.0
+margin_top = 100.0
+margin_right = 766.0
+margin_bottom = 140.0
+size_flags_horizontal = 8
+
+[node name="LabelMaxFps" type="Label" parent="Video/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 161.0
+margin_right = 87.0
+margin_bottom = 175.0
+text = "FPS Cap"
+
+[node name="HSliderMaxFPS" type="HSlider" parent="Video/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 366.0
+margin_top = 160.0
+margin_right = 766.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 8
+size_flags_vertical = 1
+min_value = 30.0
+max_value = 165.0
+value = 60.0
+rounded = true
+
+[node name="SliderLabel" type="Label" parent="Video/MarginContainer/VBoxContainer/GridContainer/HSliderMaxFPS"]
+margin_left = 573.0
+margin_top = -34.0
+margin_right = 597.0
+margin_bottom = -20.0
+size_flags_horizontal = 4
+text = "100"
+align = 1
+valign = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_initialized_": true
+}
+
+[node name="Audio" type="Tabs" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Audio"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+
+[node name="GridContainer" type="GridContainer" parent="Audio/MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 791.0
+margin_bottom = 387.0
+custom_constants/vseparation = 20
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelMainVolume" type="Label" parent="Audio/MarginContainer/GridContainer"]
+margin_top = 1.0
+margin_right = 91.0
+margin_bottom = 15.0
+text = "Main Volume"
+
+[node name="HSliderMainVolume" type="HSlider" parent="Audio/MarginContainer/GridContainer"]
+margin_left = 366.0
+margin_right = 766.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 10
+size_flags_vertical = 1
+value = 90.0
+rounded = true
+
+[node name="SliderLabel" type="Label" parent="Audio/MarginContainer/GridContainer/HSliderMainVolume"]
+margin_right = 24.0
+margin_bottom = 14.0
+size_flags_horizontal = 4
+text = "100"
+align = 1
+valign = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_initialized_": true
+}
+
+[node name="LabelMusicVolume" type="Label" parent="Audio/MarginContainer/GridContainer"]
+margin_top = 37.0
+margin_right = 91.0
+margin_bottom = 51.0
+text = "Music Volume"
+
+[node name="HSliderMusicVolume" type="HSlider" parent="Audio/MarginContainer/GridContainer"]
+margin_left = 366.0
+margin_top = 36.0
+margin_right = 766.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 10
+size_flags_vertical = 1
+value = 90.0
+rounded = true
+
+[node name="SliderLabel" type="Label" parent="Audio/MarginContainer/GridContainer/HSliderMusicVolume"]
+margin_right = 24.0
+margin_bottom = 14.0
+size_flags_horizontal = 4
+text = "100"
+align = 1
+valign = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_initialized_": true
+}
+
+[node name="LabelSFXVolume" type="Label" parent="Audio/MarginContainer/GridContainer"]
+margin_top = 73.0
+margin_right = 91.0
+margin_bottom = 87.0
+text = "SFX Volume"
+
+[node name="HSliderSFXVolume" type="HSlider" parent="Audio/MarginContainer/GridContainer"]
+margin_left = 366.0
+margin_top = 72.0
+margin_right = 766.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 10
+size_flags_vertical = 1
+value = 90.0
+rounded = true
+
+[node name="SliderLabel" type="Label" parent="Audio/MarginContainer/GridContainer/HSliderSFXVolume"]
+margin_right = 24.0
+margin_bottom = 14.0
+size_flags_horizontal = 4
+text = "100"
+align = 1
+valign = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_initialized_": true
+}
+
+[node name="Key Bindings" type="Tabs" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 44.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Key Bindings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="KeyBindingsEdit" type="GridContainer" parent="Key Bindings/ScrollContainer"]
+script = ExtResource( 2 )
+
+[connection signal="item_selected" from="Video/MarginContainer/VBoxContainer/GridContainer/OptionButtonDisplayMode" to="." method="_on_OptionButtonDisplayMode_item_selected"]
+[connection signal="toggled" from="Video/MarginContainer/VBoxContainer/GridContainer/CheckButtonVsync" to="." method="_on_CheckButtonVsync_toggled"]
+[connection signal="toggled" from="Video/MarginContainer/VBoxContainer/GridContainer/CheckButtonCapFPS" to="." method="_on_CheckButtonCapFPS_toggled"]
+[connection signal="value_changed" from="Video/MarginContainer/VBoxContainer/GridContainer/HSliderMaxFPS" to="." method="_on_HSliderMaxFPS_value_changed"]
+[connection signal="value_changed" from="Audio/MarginContainer/GridContainer/HSliderMainVolume" to="." method="_on_HSliderMainVolume_value_changed"]
+[connection signal="value_changed" from="Audio/MarginContainer/GridContainer/HSliderMusicVolume" to="." method="_on_HSliderMusicVolume_value_changed"]
+[connection signal="value_changed" from="Audio/MarginContainer/GridContainer/HSliderSFXVolume" to="." method="_on_HSliderSFXVolume_value_changed"]

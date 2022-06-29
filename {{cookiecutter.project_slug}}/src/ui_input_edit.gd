@@ -62,7 +62,7 @@ func _input(event: InputEvent) -> void:
 func get_input_text(input_event: InputEvent) -> String:
 	if input_event is InputEventKey:
 		return input_event.as_text()
-	elif input_event is InputEventMouseButton:
+	if input_event is InputEventMouseButton:
 		var input_event_mouse: InputEventMouseButton = input_event
 		return MOUSE_BUTTON_TEXT[input_event_mouse.button_index - 1]
 	return input_event.as_text()

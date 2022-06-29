@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/menu_pause.gd" type="Script" id=1]
+[ext_resource path="res://src/menu_pause.gd" type="Script" id=1]
 [ext_resource path="res://resources/theme_main.tres" type="Theme" id=2]
-[ext_resource path="res://scenes/ui_quit_button.gd" type="Script" id=3]
-[ext_resource path="res://scenes/ui_transition_button.gd" type="Script" id=4]
+[ext_resource path="res://src/ui_quit_button.gd" type="Script" id=3]
+[ext_resource path="res://src/ui_transition_button.gd" type="Script" id=4]
 [ext_resource path="res://scenes/ui_settings_edit.tscn" type="PackedScene" id=5]
 
 [node name="PauseMenu" type="PopupPanel"]

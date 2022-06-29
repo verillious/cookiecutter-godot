@@ -1,3 +1,0 @@
-[submodule "wiki"]
-	path = wiki
-	url = {{ cookiecutter.github_wiki_url }}

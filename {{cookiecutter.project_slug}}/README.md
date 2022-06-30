@@ -1,13 +1,8 @@
-{% for _ in cookiecutter.project_name %}={% endfor %}
-{{ cookiecutter.project_name }}
-{% for _ in cookiecutter.project_name %}={% endfor %}
+# {{ cookiecutter.project_name }}
 
 {{ cookiecutter.project_short_description }}
 
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `verillious/cookiecutter-godot`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`verillious/cookiecutter-godot`: https://github.com/verillious/cookiecutter-godot
+This project was created with [cookiecutter](https://github.com/audreyr/cookiecutter) and the [verillious/cookiecutter-godot](https://github.com/verillious/cookiecutter-godot) project template.

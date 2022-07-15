@@ -14,6 +14,7 @@ This tool will create a Godot project with the following features:
 * Linting and Formatting with [GDScript Toolkit](https://github.com/Scony/godot-gdscript-toolkit)
 * [bump2version](https://github.com/c4urself/bump2version): Pre-configured version bumping and tagging with a single command
 * Pre-configured to load mod `.pck` files from the user directory
+* Optional export to github pages
 
 ## 🏃 Quickstart
 

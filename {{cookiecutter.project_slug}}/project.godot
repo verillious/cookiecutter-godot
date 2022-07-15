@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/ui_input_edit.gd"
 }, {
-"base": "Reference",
+"base": "GridContainer",
 "class": "KeyBindingsEdit",
 "language": "GDScript",
 "path": "res://src/ui_key_bindings_edit.gd"
@@ -29,12 +29,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/logger.gd"
 }, {
-"base": "Reference",
+"base": "TileMap",
 "class": "Map",
 "language": "GDScript",
 "path": "res://src/scn_map.gd"
 }, {
-"base": "Reference",
+"base": "Button",
 "class": "QuitButton",
 "language": "GDScript",
 "path": "res://src/ui_quit_button.gd"
@@ -49,12 +49,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/settings.gd"
 }, {
-"base": "Reference",
+"base": "Label",
 "class": "SliderLabel",
 "language": "GDScript",
 "path": "res://src/ui_slider_label.gd"
 }, {
-"base": "Reference",
+"base": "Button",
 "class": "TransitionButton",
 "language": "GDScript",
 "path": "res://src/ui_transition_button.gd"
@@ -64,7 +64,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/utils.gd"
 }, {
-"base": "Reference",
+"base": "Label",
 "class": "VersionLabel",
 "language": "GDScript",
 "path": "res://src/ui_version_label.gd"

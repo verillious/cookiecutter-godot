@@ -3,8 +3,9 @@
     "github_username": "verillious",
     "email": "verilliousdev@gmail.com",
     "full_name": "{{cookiecutter.github_username}}",
-    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
     "project_short_description": "A sample cookiecutter-godot project",
     "version": "0.1.0",
-    "github_url": "git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git"
+    "github_url": "git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git",
+    "github_pages_export": "n"
 }
